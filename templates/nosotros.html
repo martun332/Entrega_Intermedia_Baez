@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+<title>Nosotros</title>
+{% endblock titulo %}
+
+
+{% block base_navbar %}
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href={% url 'pagina_index' %}>CoderHouse</a>
+        <a class="btn btn-primary" href={% url 'pagina_index' %}>Inicio</a>
+    </div>
+</nav>
+{% endblock base_navbar %}
+
+{% block base_header_h1 %}
+Sobre nosotros
+{% endblock base_header_h1 %}
+
+
+{% block base_main %}
+                <!-- formulario y listado-->
+                <section class="testimonials text-center bg-light">
+                    <div class="container">
+                        <h2 class="mb-5">Mi equipo:</h2>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                                    <h5>Martin Baez</h5>
+                                    <h5>Marisol Benighi</h5>
+                                    <h5>Martin Rodriguez</h5>
+                                    <p class="font-weight-light mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit dolores dicta qui vero eum, placeat pariatur, ex optio quidem dignissimos nihil repudiandae perspiciatis aut. Fuga temporibus dignissimos ducimus tempora deserunt!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+{% endblock base_main %}
