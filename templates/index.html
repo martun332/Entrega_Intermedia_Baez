@@ -23,18 +23,34 @@ Entrega intermedia del proyecto final
 
 
 {% block base_main %}
-                <!-- formulario y listado-->
-                <section class="testimonials text-center bg-light">
-                    <div class="container">
-                        <h2 class="mb-5">Formulario y listado:</h2>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                                    <h5>Martin Baez</h5>
-                                    <p class="font-weight-light mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus nam non repellendus molestiae aliquam molestias, sequi ipsa labore itaque veritatis fuga sit voluptatem optio obcaecati ipsam cumque recusandae laboriosam quasi!</p>
-                                </div>
-                            </div>
+<!-- formulario y listado-->
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">Cargar o Buscar familiares:</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <h5>Cargar Familiar</h5>
+                        <p class="font-weight-light mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus nam non repellendus molestiae aliquam molestias, sequi ipsa labore itaque veritatis fuga sit voluptatem optio obcaecati ipsam cumque recusandae laboriosam quasi!</p>
+                    </div>
+                </div>
+                    <div class="col-lg-6">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <h5>Buscar Familiar</h5>
+                            <p>
+                                <form action="" method="get">
+                                    <p>Nombre:<input type="text" name="nombre" ></p>
+                                    <p>Email:<input type="email" name="email"></p>
+                                    <p>Edad:<input type="number" name="edad"></p>
+                                    <p>Fecha de nac.:<input type="date" name="fecha_nac"></p>
+                                    <button type="submit" value="crear">Crear</button>
+                                </form>
+                            </p>
                         </div>
                     </div>
-                </section>
+            </div>
+    </div>
+</section>
+
+
 {% endblock base_main %}
