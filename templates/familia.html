@@ -3,7 +3,7 @@
 
 
 {% block titulo %}
-<title>Inicio</title>
+<title>Formulario</title>
 {% endblock titulo %}
 
 
@@ -20,5 +20,19 @@
 
 
 {% block base_header_h1 %}
-Entrega intermedia del proyecto final
+Formulario del familiar:
 {% endblock base_header_h1 %}
+
+
+{% block base_main %}
+<p>
+    <a class="btn btn-secondary" href={% url 'pagina_crear_familiar' %}>Crear otro.</a>
+</p>
+<p>
+    <ul>
+        {% for familiares in lista_familiares %}
+        <li>{{familiares}}</li>
+        {% endfor %}
+    </ul>
+</p>
+{% endblock base_main %}

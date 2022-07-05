@@ -10,8 +10,10 @@
 {% block base_navbar %}
 <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-        <a class="navbar-brand" href={% url 'pagina_index' %}>CoderHouse</a>
-        <a class="btn btn-primary" href={% url 'pagina_index' %}>Inicio</a>
+        <a class="navbar-brand" href={% url 'pagina_index' %}>Blog</a>
+        <a class="btn btn-primary" href={% url 'pagina_crear_familiar' %}>Crear familiar</a>
+        <a class="btn btn-primary" href={% url 'pagina_familia' %}>Familia</a>
+        <a class="btn btn-primary" href={% url 'pagina_nosotros' %}>Acerca de nosotros</a>
     </div>
 </nav>
 {% endblock base_navbar %}

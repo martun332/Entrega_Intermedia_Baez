@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+<title>Crear familiar</title>
+{% endblock titulo %}
+
+
+{% block base_navbar %}
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href={% url 'pagina_index' %}>Blog</a>
+        <a class="btn btn-primary" href={% url 'pagina_crear_familiar' %}>Crear familiar</a>
+        <a class="btn btn-primary" href={% url 'pagina_familia' %}>Familia</a>
+        <a class="btn btn-primary" href={% url 'pagina_nosotros' %}>Acerca de nosotros</a>
+    </div>
+</nav>
+{% endblock base_navbar %}
+
+
+{% block base_header_h1 %}
+Entrega intermedia del proyecto final
+{% endblock base_header_h1 %}
+
+
+{% block base_main %}
+<!-- crear y cargar forms-->
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <h2 class="mb-5">Cargar o Buscar familiares:</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                        <h5>Buscar Familiar</h5>
+                        <p>
+                            <form action={% url 'pagina_crear_familiar' %}>
+                                {{formget}}
+                                <button>Buscar</button>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+
+                    <div class="col-lg-6">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <h5>Crear Familiar</h5>
+                            <p>
+                                <form action={% url 'pagina_crear_familiar' %} method="post">
+                                    {% csrf_token %}
+                                    <table>{{form_crear_familiar.as_table}}</table>
+                                    <button type="submit" value="crear">Crear</button>
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+    </div>
+</section>
+{% endblock base_main %}
