@@ -8,3 +8,6 @@ class familiares(models.Model):
     edad = models.IntegerField(null=True)
     fecha_nacimiento = models.DateField(null=True)
     creacion = models.DateTimeField(auto_now_add=True, blank=True)
+    
+    def __str__(self):
+        return f'Nombre del familiar: {self.nombre}'

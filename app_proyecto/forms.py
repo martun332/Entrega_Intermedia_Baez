@@ -9,5 +9,5 @@ class FormCrearFamiliar(forms.Form):
 
 
 class BuscarFamiliar(forms.Form):
-    nombre = forms.CharField(max_length=30)
+    nombre = forms.CharField(max_length=30, required=False)
     

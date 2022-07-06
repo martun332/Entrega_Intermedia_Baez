@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.template import loader
 
@@ -8,7 +8,7 @@ from datetime import datetime
 
 # Create your views here.
 def index(request):
-    render(request,'index.html', {})
+    return render(request,'index.html',{})
 
 
 def crear_familiar(request):
@@ -31,9 +31,7 @@ def crear_familiar(request):
             )
             familiar23.save()
             
-            lista_familiares= familiares.objects.all
-            
-            return render(request, 'familia.html', {'lista_familiares': lista_familiares})
+            return redirect('pagina_familia')
         else:
             return render(request, 'crearfamiliar.html', {'form_crear_familiar':form23})
         
@@ -43,8 +41,15 @@ def crear_familiar(request):
 
 
 def familia(request):
-    lista_familiares= familiares.objects.all
-    return render(request, 'familia.html', {'lista_familiares': lista_familiares})
+    datonombre= request.GET.get('nombre')
+    
+    if datonombre:
+        lista_familiares = familiares.objects.filter(nombre__icontains=datonombre)
+    else:
+        lista_familiares= familiares.objects.all
+        
+    form25= BuscarFamiliar()
+    return render(request, 'familia.html', {'lista_familiares': lista_familiares, 'formget':form25})
 
 
 

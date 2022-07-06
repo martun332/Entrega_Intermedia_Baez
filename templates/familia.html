@@ -26,13 +26,24 @@ Formulario del familiar:
 
 {% block base_main %}
 <p>
-    <a class="btn btn-secondary" href={% url 'pagina_crear_familiar' %}>Crear otro.</a>
+    <a class="btn btn-secondary" href={% url 'pagina_crear_familiar' %}>Crear otro</a>
 </p>
 <p>
-    <ul>
+    <form action={% url 'pagina_familia' %}>
+        {{formget}}
+        <button>Buscar Familiar</button>
+    </form>
+</p>
+<p>
+    {% if lista_familiares %}
+        <ul>
         {% for familiares in lista_familiares %}
         <li>{{familiares}}</li>
         {% endfor %}
     </ul>
+    {% else %}
+    No se encontro el familiar.
+    {% endif %}
+
 </p>
 {% endblock base_main %}

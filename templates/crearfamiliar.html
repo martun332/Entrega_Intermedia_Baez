@@ -20,7 +20,7 @@
 
 
 {% block base_header_h1 %}
-Entrega intermedia del proyecto final
+Crear Familiar
 {% endblock base_header_h1 %}
 
 
@@ -28,21 +28,9 @@ Entrega intermedia del proyecto final
 <!-- crear y cargar forms-->
 <section class="testimonials text-center bg-light">
     <div class="container">
-        <h2 class="mb-5">Cargar o Buscar familiares:</h2>
+        <h2 class="mb-5">Cargar familiares:</h2>
             <div class="row">
-                <div class="col-lg-6">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <h5>Buscar Familiar</h5>
-                        <p>
-                            <form action={% url 'pagina_crear_familiar' %}>
-                                {{formget}}
-                                <button>Buscar</button>
-                            </form>
-                        </p>
-                    </div>
-                </div>
-
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <h5>Crear Familiar</h5>
                             <p>
